@@ -40,7 +40,7 @@ describe("secretCoder", () => {
     })
   })
 
-
+//ran test and failed -> function was not defined
 
 
 // b) Create the function that makes the test pass.
@@ -85,12 +85,12 @@ const secretCoder = (string) =>{
 
 // a) Create a test with expects statement using the variable provided.
 
-const arrayOfWords1 = ["Apple", "Banana", "Plum", "Orange", "Kiwi"]
-const letterA = "a"
-// Expected output: ["Apple", "Banana", "Orange"]
-const arrayOfWords2 = ["Mango", "Cherry", "Apricot", "Blueberry", "Peach"]
-const letterE = "e"
-// Expected output: ["Cherry", "Blueberry", "Peach"]
+// const arrayOfWords1 = ["Apple", "Banana", "Plum", "Orange", "Kiwi"]
+// const letterA = "a"
+// // Expected output: ["Apple", "Banana", "Orange"]
+// const arrayOfWords2 = ["Mango", "Cherry", "Apricot", "Blueberry", "Peach"]
+// const letterE = "e"
+// // Expected output: ["Cherry", "Blueberry", "Peach"]
 
 //My function is going to be named extractor
 
@@ -107,10 +107,22 @@ it("takes in an array of words and a single letter and returns all the words tha
 })
 })
 
+//ran test and failed -> function was not defined
+
 // b) Create the function that makes the test pass.
 
+//First I will need to create a funciton
+//the function will take 2 arguments, an array and a letter.
+//I will then iterate over the array to find words that contain a specific letter
+//I will then return the words containing the specified letter in an array
+//I will also need to find a way to make sure that I get both the uppercase and lowercase of the specified letter.
 
-
+const extractor = (array,letter) => {
+    extractdArr = array.filter(value => {
+      return value.toLowerCase().includes(letter)
+    })
+    return extractdArr
+    }
 
 
 
@@ -118,13 +130,54 @@ it("takes in an array of words and a single letter and returns all the words tha
 
 // a) Create a test with expect statements using the variable provided.
 
-const hand1 = [5, 5, 5, 3, 3]
-// Expected output: true
-const hand2 = [5, 5, 3, 3, 4]
-// Expected output: false
-const hand3 = [5, 5, 5, 5, 4]
-// Expected output: false
+// const hand1 = [5, 5, 5, 3, 3]
+// // Expected output: true
+// const hand2 = [5, 5, 3, 3, 4]
+// // Expected output: false
+// const hand3 = [5, 5, 5, 5, 4]
+// // Expected output: false
 
+// I will name my function fullHouseFinder
 
+describe("fullHouseFinder ", () => {
+    const hand1 = [5, 5, 5, 3, 3]
+    // Expected output: true
+    const hand2 = [5, 5, 3, 3, 4]
+    // Expected output: false
+    const hand3 = [5, 5, 5, 5, 4]
+    // Expected output: false
+    it("takes in an array of 5 numbers and determines whether or not the array is a “full house” ", () => {
+      expect(fullHouseFinder(hand1)).toEqual(true)
+      expect(fullHouseFinder(hand2)).toEqual(false)
+      expect(fullHouseFinder(hand3)).toEqual(false)
+    })
+  })
+
+//ran test and failed -> function was not defined
 
 // b) Create the function that makes the test pass.
+
+
+//first I need to create a funciton that takes in an array 
+//it needs to iterate over said array --> after some struggling, I came to terms w/ the fact I didn't need to iterate over the array
+//it also needs to determine whether there are 3 of the same values as well as 2 of the same values
+//it then needs to return a boolean value -> true/false depending on if the conditions meet the requiments for a full house
+
+const fullHouseFinder = (array) => {
+  let  newArr = array.sort()
+     if(newArr[0] === newArr[1] && newArr[1] === newArr[2] && newArr[3] === newArr[4] ||
+       newArr[0] === newArr[1] && newArr[2] === newArr[3] && newArr[3] === newArr[4])  {
+       return true
+     }
+       else{
+       return false
+     }
+}
+
+
+
+
+
+
+
+
