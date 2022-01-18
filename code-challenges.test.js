@@ -163,66 +163,117 @@ describe("fullHouseFinder ", () => {
 //it also needs to determine whether there are 3 of the same values as well as 2 of the same values
 //it then needs to return a boolean value -> true/false depending on if the conditions meet the requiments for a full house
 
-// const fullHouseFinder = (array) => {
-//   let  newArr = array.sort()
-//      if(newArr[0] === newArr[1] && newArr[1] === newArr[2] && newArr[3] === newArr[4] ||
-//        newArr[0] === newArr[1] && newArr[2] === newArr[3] && newArr[3] === newArr[4])  {
-//        return true
-//      }
-//        else{
-//        return false
-//      }
-// }
+const fullHouseFinder = (array) => {
+  let  newArr = array.sort()
+     if(newArr[0] === newArr[1] && newArr[1] === newArr[2] && newArr[3] === newArr[4] ||
+       newArr[0] === newArr[1] && newArr[2] === newArr[3] && newArr[3] === newArr[4])  {
+       return true
+     }
+       else{
+       return false
+     }
+}
 
 
 //I was struggling with this problem at first because I couldn't visualize the logic, so then I had this idea to be a little extra because I could visualize a class with a method in it that performed the same logic. 
 // After creating the class and working on the problem that way, I ended up working out some logic to writte the function as directed. Once I finsihed doing the required function, I went back and finsihed the class with some help from Kirk and Salvador. 
-
- 
-
-class PokerHand {
-  constructor([card1,card2,card3,card4,card5]){
-   this.card1 = card1;
-   this.card2 = card2;
-   this.card3 = card3;
-   this.card4 = card4;
-   this.card5 = card5;
-   
-
-    
-   
-  }
+//I decided to add a little more to my class once I finished all of the other parts of the assessment. 
 
 
 
+// let jack = 11
+// let queen = 12
+// let king = 13
+// let ace = 14
 
 
-
-
+// class PokerHand {
+//   constructor([card1,card2,card3,card4,card5]){
+//   this.card1 = card1;
+//   this.card2 = card2;
+//   this.card3 = card3;
+//   this.card4 = card4;
+//   this.card5 = card5;
+//   this.cardArr = [this.card1, this.card2, this.card3, this.card4, this.card5]
+//   }
+//   showhand(){
+//   return `Your cards are ${this.card1}, ${this.card2}, ${this.card3}, ${this.card4}, ${this.card5}.`
+//   }
   
   
-  showhand(){
-   return `Your cards are ${this.card1}, ${this.card2}, ${this.card3}, ${this.card4}, ${this.card5}.`
+//   pair(){
+//   this.cardArr.sort()
+//   if (this.cardArr[0] === this.cardArr[1] || this.cardArr[0] === this.cardArr[2] || this.card[0] === this.cardArr[3] || this.cardArr[0] === this.cardArr[4]  || //card 0 &1 
 
-  }
+//   this.cardArr[1] === this.cardArr[2] || this.cardArr[1] === this.cardArr[3] || this.card[1] === this.cardArr[4] || //card 1
 
-  organize(){
-    return 
-  }
+//   this.cardArr[2] === this.cardArr[3] || this.cardArr[2] === this.cardArr[4] || 
+//   this.card[3] === this.card[4]) {
+//     return "You have a pair."
+//   }
+//   else{
+//     "You do not have a pair."
+//   }
 
-  fullHouseFinder() {
-    cardArr = [this.card1, this.card2, this.card3, this.card4, this.card5] 
-    cardArr.sort()
-    if(this.card1 === this.card2 && this.card2 === this.card3 && this.card4 === this.card5
-      || this.card1 === this.card2 && this.card3 === this.card4 && this.card4 ===this.card5){
-      return true
-    }
-    else{
-      return false 
-    }
-  }
-  
-}
+
+
+
+
+//   threeOfAKind() {
+//     this.cardArr.sort()
+//     if (this.cardArr[0] && this.cardArr[1] === this.cardArr[2] // cards 1&2 =3
+//     || this.cardArr[0] && this.cardArr[2] === this.cardArr[3]
+//     || this.card[0] && this.card[3] === this.card[4])
+//     //cards 1&3 = 4
+//       //cards 1 & 4 = 5        ))
+//     }
+
+
+//   straight() {
+//     this.cardArr.sort()
+//     if(this.cardArr[1] === this.cardArr[0] + 1 && this.cardArr[2] === this.cardArr[1] + 1 && this.cardArr[3] === this.cardArr[2] + 1 && this.cardArr[4] === this.cardArr[3] + 1) {
+//       return "You have a straight."
+//     }
+//     else{
+//       return "You don't have a straight."
+//     }
+//   }
+
+
+//   fullHouseFinder() {
+//     this.cardArr.sort()
+//     if(this.cardArr[0] === this.cardArr[1] && this.cardArr[1] === this.cardArr[2] && this.cardArr[3] === this.cardArr[4]
+//       || this.cardArr[0] === this.cardArr[1] && this.cardArr[2] === this.cardArr[3] && this.cardArr[4] === this.cardArr[4]){
+//       return "You have a full house."
+//     }
+//     else{
+//       return "No full house detected." 
+//     }
+//   }
+// }
+  // var hand1 = new PokerHand([5, 5, 5, 3, 3])
+  // var hand2 = new PokerHand([5, 5, 3, 3, 4])
+  // var hand3 = new PokerHand([5, 5, 5, 5, 4])
+  // var hand4 = new PokerHand([4 ,2, 4, 2, 4])
+  // var hand5 = new PokerHand([2, 3, 4, 5, 6])
+  // var hand6 = new PokerHand([jack, queen, king, ace])
+  // var hand7 = new PokerHand([2, 3, 4, 5, 6])
+  // var hand8 = new PokerHand([2, 4, 5, 3, 2])
+  // console.log(hand1.fullHouseFinder())
+  // console.log(hand2.fullHouseFinder())
+  // console.log(hand3.fullHouseFinder())
+  // console.log(hand1.showhand())
+  // console.log(hand4.fullHouseFinder())
+  // console.log(hand4.fullHouseFinder())
+  // console.log(hand4.straight())
+  // console.log(hand5.straight())
+  // console.log(hand6.straight())
+  // console.log(hand7.straight())
+  // console.log(hand1.pair())
+  // console.log(hand8.pair())
+  // console.log(hand8.fullHouseFinder())
+  // console.log(hand1.threeOfAKind())
+
 
 
 
